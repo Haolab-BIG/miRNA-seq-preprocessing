@@ -229,7 +229,7 @@ These files represent the final, combined analysis results from all samples.
           - `pvalue`: The raw p-value for the statistical test.
           - `padj`: The p-value adjusted for multiple testing (e.g., using Benjamini-Hochberg correction).
       - **Application**: The deg_results.txt file is the primary input for many common downstream analyses and visualizations to interpret the biological meaning behind the differentially expressed genes like 'Volcano Plot'.
-<img width="2278" height="324" alt="CleanShot 2025-09-16 at 23 47 48@2x" src="https://github.com/user-attachments/assets/39bb72dc-3c85-4071-85b1-0c360214925a" />
+     <img width="1988" height="356" alt="CleanShot 2025-09-17 at 19 23 32@2x" src="https://github.com/user-attachments/assets/7b38d19d-2c83-4aab-8150-03e71dcf3942" />
 
   * **`merged_mirna_counts.csv`**
 
