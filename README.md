@@ -3,7 +3,8 @@
 This unified miRNA-seq pipeline processes raw single-end FASTQ files through to differential expression results, using Singularity for reproducibility and supporting batch analysis of multiple samples.
 
 ## Workflow
-<img width="1944" height="626" alt="CleanShot 2025-09-16 at 23 57 25@2x" src="https://github.com/user-attachments/assets/54b56133-fd11-4e6b-a550-55a0c75a7a10" />
+<img width="1882" height="506" alt="CleanShot 2025-09-17 at 20 34 28@2x" src="https://github.com/user-attachments/assets/51d4db6a-87e7-4b8a-8224-84c8a5793eca" />
+
 
 ## Features
 
