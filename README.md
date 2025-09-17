@@ -252,27 +252,23 @@ These files represent the final, combined analysis results from all samples.
 
     	- **General Statistics**: A combined table summarizing important metrics for each sample:
 
-<img width="2360" height="770" alt="CleanShot 2025-09-16 at 23 49 00@2x" src="https://github.com/user-attachments/assets/f4adf783-f3c2-4a33-bc87-3447f23b7240" />
+    <img width="1924" height="770" alt="CleanShot 2025-09-17 at 19 19 05@2x" src="https://github.com/user-attachments/assets/4cf7ba35-669f-4247-b321-8f56e3ebba46" />
 
-
-    	- **FastQC**: Quality-control metrics on raw and trimmed reads, including  
+     - **FastQC**: Quality-control metrics on raw and trimmed reads, including  
       'Sequence Counts', 'Sequence Quality Histograms', 'Per Sequence Quality Scores',  
       'Per Base Sequence Content', 'Per Sequence GC Content', 'Per Base N Content',  
       'Sequence Length Distribution', 'Sequence Duplication Levels',  
       'Overrepresented sequences by sample', 'Top overrepresented sequences', 'Adapter Content'.
 
-          - **Sequence Quality Histograms**: The mean quality value across each base position in the read.  
+     - **Sequence Quality Histograms**: The mean quality value across each base position in the read.  
 
-<img width="2458" height="1074" alt="CleanShot 2025-09-16 at 23 49 44@2x" src="https://github.com/user-attachments/assets/3331fd17-fde2-45fc-b48e-0a2a8ccd44d3" />
-
-    	- **Cutadapt**: Reports the number of reads and bases trimmed for adapters and quality:
-
-<img width="2452" height="740" alt="CleanShot 2025-09-16 at 23 52 10@2x" src="https://github.com/user-attachments/assets/f6b2ae70-788d-483d-b8b0-0f732a3db324" />
+       <img width="1914" height="1206" alt="CleanShot 2025-09-17 at 19 19 37@2x" src="https://github.com/user-attachments/assets/4f1955eb-ffb2-4a6b-929c-11400e7b239b" />
 
 
     	- **Botwie1**: Alignment statistics such as total reads, uniquely mapped reads, and multi-mapping rates:
 
-<img width="2454" height="812" alt="CleanShot 2025-09-16 at 23 52 25@2x" src="https://github.com/user-attachments/assets/31aade2c-48e4-4505-820c-6288411f374b" />
+     <img width="1910" height="950" alt="CleanShot 2025-09-17 at 19 21 11@2x" src="https://github.com/user-attachments/assets/877d517d-2e72-4037-b153-75e1ef8fbc46" />
+
 
 
 -----
