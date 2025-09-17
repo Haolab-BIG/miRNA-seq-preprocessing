@@ -248,11 +248,11 @@ These files represent the final, combined analysis results from all samples.
   * **`miRNA_targets_genes.txt`**
 
       * **Content**: A tab-separated text file containing the relationships between **miRNAs** and their **target genes**.  
-           - **MiRBase_ID**: The standardized miRNA ID (e.g., *hsa-let-7g-5p*), usually from the **miRBase** database.  
-           - **miR_Family**: The miRNA family information (e.g., *let-7-5p/98-5p*), used to reveal homologous or functionally related miRNA groups.  
-           - **Gene_Symbol**: The official symbol of the predicted or validated target gene (e.g., *A1CF*, *ABCF1*), typically from a standard gene annotation database.  
+           - `MiRBase_ID`: The standardized miRNA ID (e.g., *hsa-let-7g-5p*), usually from the **miRBase** database.  
+           - `miR_Family`: The miRNA family information (e.g., *let-7-5p/98-5p*), used to reveal homologous or functionally related miRNA groups.  
+           - `Gene_Symbol`: The official symbol of the predicted or validated target gene (e.g., *A1CF*, *ABCF1*), typically from a standard gene annotation database.  
       * **Application**: Provides a quick and simple list of the most important miRNAs from your analysis for reference or as input for other scripts.
-      <img width="720" height="644" alt="CleanShot 2025-09-17 at 20 48 00@2x" src="https://github.com/user-attachments/assets/9126aac6-fefd-40be-bf6d-03bea1bebcc4" />
+      <img width="698" height="216" alt="CleanShot 2025-09-17 at 20 50 11@2x" src="https://github.com/user-attachments/assets/655d2de7-e0b7-4097-bd2e-39627661abfc" />
 
   * **`multiqc_report`**: Open `multiqc_report.html` in a web browser to explore all sections interactively.
 
