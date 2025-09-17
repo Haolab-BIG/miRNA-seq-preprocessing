@@ -137,7 +137,14 @@ singularity exec ../miRNA.sif seqkit grep -r -p "^hsa" mature.fa -o mature_hsa.f
 singularity exec ../miRNA.sif seqkit grep -r -p "^hsa" hairpin.fa -o hairpin_hsa.fa
 mv mature_hsa.fa mature.fa
 mv hairpin_hsa.fa hairpin.fa
+
+# 2. Download miRNA prediction files (from TargetScan)
+wget https://www.targetscan.org/vert_80/vert_80_data_download/miR_Family_Info.txt.zip
+wget https://www.targetscan.org/vert_80/vert_80_data_download/Predicted_Targets_Info.default_predictions.txt.zip
+gunzip miR_Family_Info.txt.zip
+gunzip Predicted_Targets_Info.default_predictions.txt.zip
 ```
+
 
 #### Build Bowtie1 Index
 
@@ -157,6 +164,8 @@ reference_data/
 ├── GRCh38.primary_assembly.genome.fa
 ├── hairpin.fa
 ├── mature.fa
+├── miR_Family_Info.txt
+├── Predicted_Targets_Info.default_predictions.txt
 ├── hsa.1.ebwt
 ├── hsa.2.ebwt
 ├── hsa.3.ebwt
@@ -209,8 +218,7 @@ After the pipeline completes successfully, the output directory (`mirna_project_
 ├── multiqc_report/
 │   └── multiqc_report.html
 ├── deg_results.txt
-├── final_results_significant_mirnas.fa
-├── final_results_significant_mirnas.txt
+├── miRNA_targets_genes.txt
 └── merged_mirna_counts.csv
 ```
 
@@ -237,15 +245,14 @@ These files represent the final, combined analysis results from all samples.
       * **Content**: A matrix of raw read counts. Rows are miRNAs, and columns are samples. This file is the direct input for the DESeq2 analysis.
       * **Application**: Can be used for custom quality control checks or visualizations, such as Principal Component Analysis (PCA) or sample-to-sample distance heatmaps to assess overall experiment consistency.
 
-  * **`final_results_significant_mirnas.txt`**
+  * **`miRNA_targets_genes.txt`**
 
-      * **Content**: A plain text file listing the names of all miRNAs that were found to be statistically significant (`padj < 0.05`).
+      * **Content**: A tab-separated text file containing the relationships between **miRNAs** and their **target genes**.  
+           - **MiRBase_ID**: The standardized miRNA ID (e.g., *hsa-let-7g-5p*), usually from the **miRBase** database.  
+           - **miR_Family**: The miRNA family information (e.g., *let-7-5p/98-5p*), used to reveal homologous or functionally related miRNA groups.  
+           - **Gene_Symbol**: The official symbol of the predicted or validated target gene (e.g., *A1CF*, *ABCF1*), typically from a standard gene annotation database.  
       * **Application**: Provides a quick and simple list of the most important miRNAs from your analysis for reference or as input for other scripts.
-
-  * **`final_results_significant_mirnas.fa`**
-
-      * **Content**: A FASTA file containing the mature sequences of all significantly differentially expressed miRNAs.
-      * **Application**: This is a critical file for downstream functional analysis. You can submit the sequences in this file to online target prediction databases (e.g., TargetScan, miRDB) to predict the mRNA targets of your significant miRNAs, which is the first step in understanding their biological function.
+      <img width="720" height="644" alt="CleanShot 2025-09-17 at 20 48 00@2x" src="https://github.com/user-attachments/assets/9126aac6-fefd-40be-bf6d-03bea1bebcc4" />
 
   * **`multiqc_report`**: Open `multiqc_report.html` in a web browser to explore all sections interactively.
 
