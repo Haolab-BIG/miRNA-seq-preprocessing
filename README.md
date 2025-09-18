@@ -10,7 +10,6 @@ This unified miRNA-seq pipeline processes raw single-end FASTQ files through to 
 
   * **Single Command Execution**: Executes the entire workflow—from FASTQ input and QC, through miRNA quantification, to differential expression analysis—with a single command.
   * **Reproducible**: All software (FastQC, Trim Galore, Bowtie1, miRDeep2, DESeq2) is encapsulated within a Singularity container (`miRNA.sif`), ensuring analysis is fully reproducible across different systems.
-  * **Robust Quantification**: Leverages the well-established miRDeep2 package for accurate mapping and quantification of known miRNAs.
   * **Automated Reporting**: Generates a final, interactive MultiQC report summarizing quality control metrics across all samples and steps for easy assessment.
 
 ## Requirements
@@ -219,6 +218,8 @@ After the pipeline completes successfully, the output directory (`mirna_project_
 │   └── multiqc_report.html
 ├── deg_results.txt
 ├── miRNA_targets_genes.txt
+├── go_targets_genes.pdf
+├── go_targets_genes_results.txt
 └── merged_mirna_counts.csv
 ```
 
@@ -253,6 +254,24 @@ These files represent the final, combined analysis results from all samples.
            - `Gene_Symbol`: The official symbol of the predicted or validated target gene (e.g., *A1CF*, *ABCF1*), typically from a standard gene annotation database.  
       * **Application**: Provides a quick and simple list of the most important miRNAs from your analysis for reference or as input for other scripts.
       <img width="698" height="216" alt="CleanShot 2025-09-17 at 20 50 11@2x" src="https://github.com/user-attachments/assets/655d2de7-e0b7-4097-bd2e-39627661abfc" />
+      
+      * **`go_targets_genes.pdf`**
+        This plot is a visual summary of the enrichment analysis results, highlighting the most significant biological pathways.Displays the top 10 most significant GO terms enriched among the DEGs.
+
+      <img width="1236" height="988" alt="CleanShot 2025-09-18 at 21 04 31@2x" src="https://github.com/user-attachments/assets/ecd37270-2594-47ca-990b-a852b7f6a732" />
+
+
+      * **`go_targets_genes_results.txt`**
+        A tab-separated text file containing the results of GO enrichment analysis. Each row corresponds to a pathway, and columns typically include:
+        - `ID`: The unique identifier for the GO term (e.g., `GO:0006955`).
+		      - `Description`: The human-readable name of the GO term (e.g., "immune response").
+		      - `GeneRatio`: **Gene Ratio**: The number of DEGs in this term / The total number of input DEGs.
+		      - `BgRatio`: **Background Ratio**: The number of genes in this term in the background genome / Total background genes.
+		      - `pvalue`: The raw p-value, assessing the likelihood of enrichment by chance.
+		      - `p.adjust`: **Adjusted P-value**, the **key metric** for determining the significance of the enrichment results.
+		      - `qvalue`: An alternative adjusted p-value used to control the False Discovery Rate (FDR).
+		      - `geneID`: A list of the **specific gene IDs** from your input that are annotated to this term, separated by `/`.
+		      - `Count`: The **number of genes** from your input list that are annotated to this term.
 
   * **`multiqc_report`**: Open `multiqc_report.html` in a web browser to explore all sections interactively.
 
