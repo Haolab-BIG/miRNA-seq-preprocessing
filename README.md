@@ -262,16 +262,16 @@ These files represent the final, combined analysis results from all samples.
 
 
       * **`go_targets_genes_results.txt`**
-        A tab-separated text file containing the results of GO enrichment analysis. Each row corresponds to a pathway, and columns typically include:
-        - `ID`: The unique identifier for the GO term (e.g., `GO:0006955`).
-		      - `Description`: The human-readable name of the GO term (e.g., "immune response").
-		      - `GeneRatio`: **Gene Ratio**: The number of DEGs in this term / The total number of input DEGs.
-		      - `BgRatio`: **Background Ratio**: The number of genes in this term in the background genome / Total background genes.
-		      - `pvalue`: The raw p-value, assessing the likelihood of enrichment by chance.
-		      - `p.adjust`: **Adjusted P-value**, the **key metric** for determining the significance of the enrichment results.
-		      - `qvalue`: An alternative adjusted p-value used to control the False Discovery Rate (FDR).
-		      - `geneID`: A list of the **specific gene IDs** from your input that are annotated to this term, separated by `/`.
-		      - `Count`: The **number of genes** from your input list that are annotated to this term.
+		A tab-separated text file containing the results of GO enrichment analysis. Each row corresponds to a pathway, and columns typically include:
+		- `ID`: The unique identifier for the GO term (e.g., `GO:0006955`).
+		- `Description`: The human-readable name of the GO term (e.g., "immune response").
+		- `GeneRatio`: **Gene Ratio**: The number of DEGs in this term / The total number of input DEGs.
+		- `BgRatio`: **Background Ratio**: The number of genes in this term in the background genome / Total background genes.
+		- `pvalue`: The raw p-value, assessing the likelihood of enrichment by chance.
+		- `p.adjust`: **Adjusted P-value**, the **key metric** for determining the significance of the enrichment results.
+		- `qvalue`: An alternative adjusted p-value used to control the False Discovery Rate (FDR).
+		- `geneID`: A list of the **specific gene IDs** from your input that are annotated to this term, separated by `/`.
+		- `Count`: The **number of genes** from your input list that are annotated to this term.
 
   * **`multiqc_report`**: Open `multiqc_report.html` in a web browser to explore all sections interactively.
 
