@@ -80,7 +80,7 @@ This unified miRNA-seq pipeline processes raw single-end FASTQ files through to 
 
 3.  **Pipeline Files**:
 
-      * `run_pipeline.sh`
+      * `run_miRNA-seq.sh`
       * `miRNA.sif` (The Singularity container)
 
 4.  **Reference Data**: A directory containing all necessary reference files.
@@ -189,7 +189,7 @@ Execute the pipeline using a single command.
 ### Example Command
 
 ```bash
-bash run_pipeline.sh \
+bash run_miRNA-seq.sh \
   -s ./samplesheet.csv \
   -o ./mirna_project_results \
   -r ./reference_data \
